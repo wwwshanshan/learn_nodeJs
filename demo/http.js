@@ -18,8 +18,8 @@ http.createServer((request, response) => {
     }
     // 设置响应头:状态码200 文件类型html 字符集utf-8
     response.writeHead(200, {'Content-Type': 'text/html;charset=UTF-8'});
-    // 表示页面上面输出一句话并且结束响应
     response.write('你好');
+    // 表示页面上面输出一句话并且结束响应
     response.end('Hello World'); // end方法必须写
 }).listen(3001); // 端口
 console.log('Server running at http://127.0.0.1:3001/');
