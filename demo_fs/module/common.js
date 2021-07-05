@@ -1,4 +1,5 @@
 const fs = require('fs');
+// 获取对应文件类型
 exports.getMime = function(pathname){
     switch (pathname) {
         case '.html':
@@ -11,6 +12,7 @@ exports.getMime = function(pathname){
             return 'text/html';
     }
 }
+// 读取对应文件类型（异步）
 exports.getFileMime = function(extname){
     return new Promise((resolve, rejects)=>{
         fs.readFile('./data/mime.json', (err, data)=>{
@@ -26,6 +28,7 @@ exports.getFileMime = function(extname){
     })
    
 }
+// 读取对应文件类型（同步）
 exports.getFileMimeSync = function(extname){
     let data = fs.readFileSync('./data/mime.json');
     let mime = JSON.parse(data.toString());
